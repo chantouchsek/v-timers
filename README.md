@@ -17,19 +17,19 @@ yarn add v-timers
 #### 2.1. Global import
 ```javascript
 import Vue from 'vue'
-import VueTimers from 'v-timers'
+import VTimers from 'v-timers'
 
-Vue.use(VueTimers)
+Vue.use(VTimers)
 ```
 
 #### 2.2. Or use mixin for the specific component
 ```javascript
-import {mixin as VueTimers} from 'v-timers'
+import {mixin as VTimers} from 'v-timers'
 // -------- //
 import { VTimerMixin } from 'v-timers'
 
 export default {
-  mixins: [VueTimers],
+  mixins: [VTimers],
   // ------ //
   mixins: [VTimerMixin],
 }
