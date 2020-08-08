@@ -81,6 +81,10 @@ export default {
     const data = vm.timers
     const options = vm.$options.timers
     vm.$timer = {
+      /**
+       * Start timer
+       * @param {string} name
+       */
       start(name) {
         if (process.env.NODE_ENV !== 'production' && !(name in options)) {
           throw new ReferenceError(
@@ -99,6 +103,10 @@ export default {
         }
         vm.$emit('timers:start:' + name)
       },
+      /**
+       * Stop timer
+       * @param {string} name
+       */
       stop(name) {
         if (process.env.NODE_ENV !== 'production' && !(name in options)) {
           throw new ReferenceError(
@@ -110,6 +118,10 @@ export default {
         data[name].isRunning = false
         vm.$emit('timers:stop:' + name)
       },
+      /**
+       * Restart timer
+       * @param {string} name
+       */
       restart(name) {
         if (process.env.NODE_ENV !== 'production' && !(name in options)) {
           throw new ReferenceError(

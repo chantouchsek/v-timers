@@ -6,6 +6,6 @@ import { VTimers } from './';
 
 declare module 'vue/types/vue' {
     interface Vue {
-        $timers: VTimers;
+        $timer: VTimers;
     }
 }
