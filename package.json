@@ -11,6 +11,11 @@
     "email": "chantouchsek.cs83@gmail.com",
     "name": "Chantouch Sek"
   },
+  "keywords": [
+    "vue-timers",
+    "v-tiemrs",
+    "timers"
+  ],
   "scripts": {
     "lint": "eslint --fix index.js mixin.js utils.js",
     "size": "size-limit",
