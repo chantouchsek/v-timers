@@ -31,7 +31,7 @@ export default {
 }
 ```
 
-#### 2.3. Nuxt plugins
+#### 2.3. Nuxt Module
 `nuxt.config.js`:
 ```js
 export default {
