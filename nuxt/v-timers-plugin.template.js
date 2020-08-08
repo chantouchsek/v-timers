@@ -5,5 +5,5 @@ export default ({ app }) => {
   const [pluginOptions] = [<%= serialize(options) %>]
 
   Vue.use(VTimers, { ...pluginOptions });
-  app.$timers = VTimers;
+  app.$timer = VTimers;
 }

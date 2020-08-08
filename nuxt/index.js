@@ -10,19 +10,19 @@ Usage:
             ['v-timers/nuxt', {/.* options *./}]
         ],
         // Optionally passing options in module top level configuration
-        timers: {/.* options *./}
+        timer: {/.* options *./}
     }
 */
 
 const { resolve } = require('path')
 
 module.exports = function nuxtVSanitizeModule () {
-  const { timers = {} } = this.options
+  const { timer = {} } = this.options
 
   this.addPlugin({
     src: resolve(__dirname, 'v-timers-plugin.template.js'),
     fileName: 'v-timers.js',
-    options: timers
+    options: timer
   })
 }
 
