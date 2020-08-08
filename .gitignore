@@ -8,3 +8,4 @@ report
 npm-debug*
 .vscode
 index.min.js
+coverage

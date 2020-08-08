@@ -1,4 +1,4 @@
-import VueTimers from '../index'
+import VueTimers from '../src'
 import { mount, createLocalVue } from '@vue/test-utils'
 
 const localVue = createLocalVue()

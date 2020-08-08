@@ -5,7 +5,7 @@ const terser = require('rollup-plugin-terser').terser
 
 export default [
   {
-    input: 'index.js',
+    input: 'src/index.js',
     output: {
       file: 'dist/v-timers.esm.js',
       format: 'es'
@@ -30,11 +30,11 @@ export default [
     ]
   },
   {
-    input: 'index.js',
+    input: 'src/index.js',
     output: {
       file: 'dist/v-timers.umd.js',
       format: 'umd',
-      name: 'vueTimers'
+      name: 'vTimers'
     },
     plugins: [
       resolve(),

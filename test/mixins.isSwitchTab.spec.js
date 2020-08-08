@@ -1,12 +1,12 @@
 import { mount } from '@vue/test-utils'
-import {mixin as VueTimers} from '../index'
+import {VTimerMixin} from '../src'
 
 const component1 = {
   template: '<div></div>',
   name: 'component1',
-  mixins: [VueTimers],
+  mixins: [VTimerMixin],
   timers: {
-    log: { time: 1000, autostart: true, isSwitchTab: true }
+    log: { time: 1000, autoStart: true, isSwitchTab: true }
   },
   data() {
     return {
@@ -79,7 +79,7 @@ describe('isSwitchTab: true', () => {
   it('test switch tab with immediate', async () => {
     // change timers`s config
     component1.timers = {
-      log: { time: 1000, autostart: true, isSwitchTab: true, immediate: true }
+      log: { time: 1000, autoStart: true, isSwitchTab: true, immediate: true }
     }
     const wrapper = mount(view)
     const child = wrapper.vm.$children[0]

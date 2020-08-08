@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils'
-import {mixin as VueTimers} from '../index'
+import {mixin as VTimers} from '../src'
 
 const component = {
   template: '<div></div>',
-  mixins: [VueTimers],
+  mixins: [VTimers],
   timers: {
     log: { time: 1000 }
   },
@@ -61,7 +61,7 @@ describe('default options', () => {
       time: 1000,
       repeat: false,
       immediate: false,
-      autostart: false,
+      autoStart: false,
       isSwitchTab: false,
       callback: wrapper.vm.log
     })
@@ -70,20 +70,20 @@ describe('default options', () => {
   it('test start and stop', () => {
     wrapper.vm.$timer.start('log')
     expect(wrapper.vm.timers.log.isRunning).toBe(true)
-    expect(wrapper.emitted()['timer-start:log']).toBeTruthy()
+    expect(wrapper.emitted()['timers:start:log']).toBeTruthy()
     expect(wrapper.vm.count).toBe(0)
     jest.advanceTimersByTime(1000)
     expect(wrapper.vm.count).toBe(1)
 
     wrapper.vm.$timer.stop('log')
     expect(wrapper.vm.timers.log.isRunning).toBe(false)
-    expect(wrapper.emitted()['timer-stop:log']).toBeTruthy()
+    expect(wrapper.emitted()['timers:stop:log']).toBeTruthy()
   })
 
   it('test restart', () => {
     wrapper.vm.$timer.restart('log')
     expect(wrapper.vm.timers.log.isRunning).toBe(true)
-    expect(wrapper.emitted()['timer-restart:log']).toBeTruthy()
+    expect(wrapper.emitted()['timers:restart:log']).toBeTruthy()
   })
 })
 
@@ -94,11 +94,11 @@ describe('execute start or stop 2 times', () => {
   it('test execute start or stop 2 times', () => {
     wrapper.vm.$timer.start('log')
     wrapper.vm.$timer.start('log')
-    expect(wrapper.emitted()['timer-start:log'].length).toBe(1)
+    expect(wrapper.emitted()['timers:start:log'].length).toBe(1)
 
     wrapper.vm.$timer.stop('log')
     wrapper.vm.$timer.stop('log')
-    expect(wrapper.emitted()['timer-stop:log'].length).toBe(1)
+    expect(wrapper.emitted()['timers:stop:log'].length).toBe(1)
   })
 })
 
@@ -106,13 +106,13 @@ describe('autoStart: true', () => {
   // Now mount the component and you have the wrapper
   const wrapper = mount(component, {
     timers: {
-      log: { time: 1000, autostart: true }
+      log: { time: 1000, autoStart: true }
     }
   })
 
   it('test start and stop', () => {
     expect(wrapper.vm.timers.log.isRunning).toBe(true)
-    expect(wrapper.emitted()['timer-start:log']).toBeTruthy()
+    expect(wrapper.emitted()['timers:start:log']).toBeTruthy()
   })
 })
 

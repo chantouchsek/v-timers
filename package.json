@@ -1,11 +1,12 @@
 {
   "name": "v-timers",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.0",
   "license": "MIT",
   "description": "Mixin to manage your intervals in Vue.js",
   "main": "dist/v-timers.umd.js",
   "module": "dist/v-timers.esm.js",
   "jsdelivr": "dist/v-timers.umd.js",
+  "types": "types/index.d.ts",
   "repository": "https://github.com/Chantouch/v-timers",
   "author": {
     "email": "chantouchsek.cs83@gmail.com",
@@ -13,11 +14,11 @@
   },
   "keywords": [
     "vue-timers",
-    "v-tiemrs",
+    "v-timers",
     "timers"
   ],
   "scripts": {
-    "lint": "eslint --fix index.js mixin.js utils.js",
+    "lint": "eslint --fix src/index.js src/mixin.js src/utils.js",
     "size": "size-limit",
     "test": "jest",
     "build": "rollup -c rollup.config.js",
