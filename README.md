@@ -25,9 +25,13 @@ Vue.use(VueTimers)
 #### 2.2. Or use mixin for the specific component
 ```javascript
 import {mixin as VueTimers} from 'v-timers'
+// -------- //
+import { VTimerMixin } from 'v-timers'
 
 export default {
-  mixins: [VueTimers]
+  mixins: [VueTimers],
+  // ------ //
+  mixins: [VTimerMixin],
 }
 ```
 
