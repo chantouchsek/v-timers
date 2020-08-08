@@ -1,6 +1,6 @@
 import _Vue from "vue";
 
-export default class VTimers {
+export declare class VTimers {
     start(name: string): void;
     stop(name: string): void;
     restart(name: string): void;
