@@ -1,5 +1,10 @@
-## v-timers
+# v-timers
 Simple mixin to manage timers or intervals for Vue.js
+
+[![Latest Version on NPM](https://img.shields.io/npm/v/v-timers.svg?style=flat-square)](https://npmjs.com/package/v-timers)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![npm](https://img.shields.io/npm/dt/v-timers.svg?style=flat-square)](https://npmjs.com/package/v-timers)
+[![npm](https://img.shields.io/npm/dm/v-timers.svg?style=flat-square)](https://npmjs.com/package/v-timers)
 
 ## Installation
 
