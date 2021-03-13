@@ -1,4 +1,5 @@
 import _Vue from "vue";
+import './vue'
 
 export declare class VTimers {
     start(name: string): void;

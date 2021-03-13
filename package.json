@@ -1,6 +1,6 @@
 {
   "name": "v-timers",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.2",
   "license": "MIT",
   "description": "Mixin to manage your intervals in Vue.js",
   "main": "dist/v-timers.umd.js",
@@ -14,12 +14,13 @@
   },
   "keywords": [
     "vue-timers",
+    "vue-timer",
     "v-timers",
+    "v-timer",
     "timers"
   ],
   "files": [
     "nuxt",
-    "src",
     "types",
     "dist"
   ],
