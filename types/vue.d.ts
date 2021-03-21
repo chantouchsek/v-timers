@@ -6,13 +6,16 @@ import { VTimers } from './';
 import Vue from "vue";
 
 interface ITimers {
-  name: string
-  callback: Function | string
-  autoStart: boolean
-  repead: boolean
-  immediate: boolean
-  time: number
-  isSwitchTab: boolean
+    name: string
+    callback: Function | string
+    autoStart: boolean
+    repead: boolean
+    immediate: boolean
+    time: number
+    isSwitchTab: boolean
+}
+interface TimersInterface {
+    [key: string]: ITimers
 }
 
 declare module 'vue/types/vue' {
@@ -22,7 +25,7 @@ declare module 'vue/types/vue' {
 }
 
 declare module 'vue/types/options' {
-  interface ComponentOptions<V extends Vue> {
-    timers?: {[key: string]: VTimers}
-  }
+    interface ComponentOptions<V extends Vue> {
+        timers?: TimersInterface
+    }
 }
