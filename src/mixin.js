@@ -162,11 +162,17 @@ export default {
     const vm = this
     const data = vm.timers
     const options = vm.$options.timers
-    Object.keys(options).forEach(function(key) {
+    const keys = Object.keys(options)
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i]
+      if (!key) {
+        continue
+      }
+
       if (options[key].isSwitchTab && data[key].instance) {
         vm.$timer.stop(key)
       }
-    })
+    }
   },
   beforeDestroy() {
     if (!this.$options.timers) return

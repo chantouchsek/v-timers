@@ -59,7 +59,7 @@ describe('isSwitchTab: true', () => {
     jest.advanceTimersByTime(1000)
     expect(child.count).toBe(1)
 
-    // swtich tab to component2
+    // switch tab to component2
     wrapper.setData({ view: 'component2' })
     await wrapper.vm.$nextTick()
     expect(child.timers.log.isRunning).toBe(false)
@@ -67,7 +67,7 @@ describe('isSwitchTab: true', () => {
     jest.advanceTimersByTime(1000)
     expect(child.count).toBe(1)
 
-    // swtich tab back to component1
+    // switch tab back to component1
     wrapper.setData({ view: 'component1' })
     await wrapper.vm.$nextTick()
     expect(child.timers.log.isRunning).toBe(true)
@@ -89,7 +89,7 @@ describe('isSwitchTab: true', () => {
     jest.advanceTimersByTime(1000)
     expect(child.count).toBe(2)
 
-    // swtich tab to component2
+    // switch tab to component2
     wrapper.setData({ view: 'component2' })
     await wrapper.vm.$nextTick()
     expect(child.timers.log.isRunning).toBe(false)
@@ -97,7 +97,7 @@ describe('isSwitchTab: true', () => {
     jest.advanceTimersByTime(1000)
     expect(child.count).toBe(2)
 
-    // swtich tab back to component1
+    // switch tab back to component1
     wrapper.setData({ view: 'component1' })
     await wrapper.vm.$nextTick()
     expect(child.timers.log.isRunning).toBe(true)
