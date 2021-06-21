@@ -1,6 +1,6 @@
 {
   "name": "v-timers",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "description": "Mixin to manage your intervals in Vue.js",
   "main": "dist/v-timers.umd.js",
@@ -29,7 +29,8 @@
     "size": "size-limit",
     "test": "jest",
     "build": "rollup -c rollup.config.js",
-    "release": "standard-version"
+    "release": "standard-version",
+    "prepublish": "yarn build"
   },
   "size-limit": [
     {
