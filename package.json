@@ -1,6 +1,6 @@
 {
   "name": "v-timers",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "description": "Mixin to manage your intervals in Vue.js",
   "main": "dist/v-timers.umd.js",

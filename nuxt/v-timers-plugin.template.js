@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import VTimers from 'v-timers';
 
 export default ({ app }) => {
