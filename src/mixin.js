@@ -91,7 +91,7 @@ export default {
             '[vue-timers.start] Cannot find timer ' + name
           )
         }
-        if (!data[name]) return
+        if (!data || !data[name]) return
         if (data[name].isRunning) return
         data[name].isRunning = true
         data[name].instance = generateTimer(
@@ -114,7 +114,7 @@ export default {
             '[vue-timers.stop] Cannot find timer ' + name
           )
         }
-        if (!data[name]) return
+        if (!data || !data[name]) return
         if (!data[name].isRunning) return
         clearTimer(options[name].repeat)(data[name].instance)
         data[name].isRunning = false
