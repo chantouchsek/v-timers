@@ -91,6 +91,7 @@ export default {
             '[vue-timers.start] Cannot find timer ' + name
           )
         }
+        if (!data[name]) return
         if (data[name].isRunning) return
         data[name].isRunning = true
         data[name].instance = generateTimer(
@@ -98,10 +99,10 @@ export default {
           vm
         )
         if (options[name].immediate) {
-          vm.$emit('timers:tick:' + name)
+          vm.$emit(`timers:tick:${name}`)
           options[name].callback()
         }
-        vm.$emit('timers:start:' + name)
+        vm.$emit(`timers:start:${name}`)
       },
       /**
        * Stop timer
@@ -113,10 +114,11 @@ export default {
             '[vue-timers.stop] Cannot find timer ' + name
           )
         }
+        if (!data[name]) return
         if (!data[name].isRunning) return
         clearTimer(options[name].repeat)(data[name].instance)
         data[name].isRunning = false
-        vm.$emit('timers:stop:' + name)
+        vm.$emit(`timers:stop:${name}`)
       },
       /**
        * Restart timer
@@ -130,7 +132,7 @@ export default {
         }
         this.stop(name)
         this.start(name)
-        vm.$emit('timers:restart:' + name)
+        vm.$emit(`timers:restart:${name}`)
       }
     }
   },
@@ -150,7 +152,7 @@ export default {
     const data = vm.timers
     const options = vm.$options.timers
     Object.keys(options).forEach(function(key) {
-      if (options[key].isSwitchTab && data[key].instance) {
+      if (options[key] && options[key].isSwitchTab && data[key].instance) {
         vm.$timer.start(key)
       }
     })

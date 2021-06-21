@@ -9,7 +9,7 @@ interface ITimers {
     name?: string
     callback?: Function | string
     autoStart?: boolean
-    repead?: boolean
+    repeat?: boolean
     immediate?: boolean
     time?: number
     isSwitchTab?: boolean

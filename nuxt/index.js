@@ -16,7 +16,7 @@ Usage:
 
 const { resolve } = require('path')
 
-module.exports = function nuxtVSanitizeModule () {
+module.exports = function nuxtVTimersModule () {
   const { timer = {} } = this.options
 
   this.addPlugin({
